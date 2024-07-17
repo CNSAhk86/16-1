@@ -1,0 +1,190 @@
+/* 전체 페이지에 커스텀 스크롤 바 적용 */
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 스크롤 바 스타일 */
+::-webkit-scrollbar {
+    width: 12px; /* 스크롤 바 너비 */
+}
+
+::-webkit-scrollbar-track {
+    background: #f0e5cf; /* 스크롤 바 트랙 배경색 */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #bdb294; /* 스크롤 바 손잡이 색 */
+    border-radius: 10px; /* 스크롤 바 손잡이 둥글게 */
+    border: 3px solid #f0e5cf; /* 스크롤 바 손잡이 테두리 */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #333; /* 스크롤 바 손잡이 호버 색 */
+}
+
+/* 스크롤 바 IE 및 Edge 대응 */
+body {
+    -ms-overflow-style: none;  /* IE 10+ */
+    scrollbar-width: thin;     /* Firefox */
+    scrollbar-color: #bdb294 #f0e5cf; /* Firefox */
+}
+
+
+header {
+    background-color: #f0e5cf;
+    padding: 1em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #e0d6ba;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #bdb294;
+    transform: scale(1.1);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1; /* 메인 컨텐츠가 남은 공간을 차지하도록 설정 */
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.section {
+    width: 100%;
+    padding: 2em;
+    box-sizing: border-box;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center; /* 가운데 정렬 */
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #e0d6ba;
+    padding-bottom: 0.5em;
+    transition: color 0.3s ease;
+    margin-bottom: 1em;
+}
+
+.character h3 {
+    font-size: 1.8em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    color: #555;
+}
+
+.character p {
+    font-size: 1.2em;
+    line-height: 1.8em; /* 줄 간격 조정 */
+    text-align: justify;
+    margin-top: 1em;
+    padding: 0 1em;
+}
+
+.intro, .music {
+    text-align: center;
+    padding: 1em;
+}
+
+.start-button {
+    display: inline-block;
+    margin-top: 1em;
+    padding: 0.5em 2em;
+    background-color: #e0d6ba;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.start-button:hover {
+    background-color: #333;
+    color: #e0d6ba;
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: #f0e5cf;
+    color: #333;
+    text-align: center;
+    padding: 1em;
+    border-top: 1px solid #e0d6ba;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: auto; /* 푸터를 화면 하단에 배치 */
+}
+
+@media (min-width: 600px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    nav ul li {
+        margin: 0 15px;
+    }
+
+    nav ul li a {
+        font-size: 1.2em;
+    }
+
+    header .logo {
+        font-size: 2em;
+    }
+
+    .section {
+        padding: 4em;
+    }
+
+    .start-button {
+        font-size: 1.2em;
+    }
+}
